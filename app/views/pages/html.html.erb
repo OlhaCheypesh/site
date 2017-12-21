@@ -1,0 +1,27 @@
+<br>
+    <div class="container">
+        <div class="row">
+            <div class="hidden-xs col-sm-4">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Меню</h4>
+                        </div>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="/pages/html">HTML</a></li>
+                            <li><a href="/pages/css">CSS</a></li>
+                            <li><a href="/pages/javascript">JavaScript</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <% if current_user != nil and current_user.id == 1 %>
+                    <center><%= link_to "Create new learn", new_post_path, class: "btn btn-default" %></center>
+                <%end%> 
+                    <% @posts.each do |post| %>
+                    <center><h4>• <%= link_to post.title, post_path(post.id) %></h4></center>
+                    <%end%>
+            </div>
+         </div>
+    </div>

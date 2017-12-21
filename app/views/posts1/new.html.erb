@@ -1,0 +1,8 @@
+<center><%= form_for @post1, url: posts1_index_path, validate: true do |f| %>
+		<% if @post1.errors.any? %>
+	 <% @post1.errors.full_messages.each do |msg| %>
+	 	<li><%=msg%></li>
+	   <%end%>
+	 <%end%>
+<%= render 'posts1/form', f:f%>
+<%end%></center>
