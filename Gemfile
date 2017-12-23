@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 
 #avatar gem
 gem "paperclip", "~> 5.0.0"
+#likes
+gem 'acts_as_votable', '~> 0.11.1'
 #validations
 gem 'client_side_validations'
 #editor
