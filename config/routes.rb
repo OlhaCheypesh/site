@@ -7,14 +7,19 @@ Rails.application.routes.draw do
   root to: 'pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts do
-  	resources :postcomments
+  	resources :postcomments 
   end
+  get "postcomments/:postcomment_id/vote", to: "postcomments#vote",as: "vote"
 
   resources :posts1 do
   	resources :postcoment1s
   end
+  get "postcomment1s/:postcomment1_id/vote", to: "postcomment1s#vote",as: "vote1"
 
   resources :posts2 do
   	resources :postcoment2s
   end
+  get "postcomment2s/:postcomment2_id/vote", to: "postcomment2s#vote",as: "vote2"
+
 end
+
