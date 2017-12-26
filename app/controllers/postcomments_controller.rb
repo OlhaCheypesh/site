@@ -24,8 +24,8 @@ def destroy
   end
 
   def vote
-    pp @comment=Postcomment.find(params[:postcomment_id])
-    pp @vote=Vote.where(user_id: current_user, postcomment_id: @comment.id).first
+    @comment=Postcomment.find(params[:postcomment_id])
+    @vote=Vote.where(user_id: current_user.id, postcomment_id: @comment.id).first
     if @vote != nil
       @vote.destroy
     else

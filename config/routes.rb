@@ -14,12 +14,12 @@ Rails.application.routes.draw do
   resources :posts1 do
   	resources :postcoment1s
   end
-  get "postcomment1s/:postcomment1_id/vote", to: "postcomment1s#vote",as: "vote1"
+  get "postcoment1s/:postcomment1_id/vote", to: "postcoment1s#vote",as: "vote1"
 
   resources :posts2 do
   	resources :postcoment2s
   end
-  get "postcomment2s/:postcomment2_id/vote", to: "postcomment2s#vote",as: "vote2"
+  get "postcoment2s/:postcomment2_id/vote", to: "postcoment2s#vote",as: "vote2"
 
 end
 

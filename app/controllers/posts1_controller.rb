@@ -6,7 +6,11 @@ before_action :authenticate_user!
   end 
 
   def show
-   pp @comment1s = Postcomment1.where(post1_id: @post1.id)
+   @comments = Postcomment1.where(post1_id: @post1.id)
+       @votes={}
+    @comments.each do |comment|
+      @votes[comment.id]=Vote1.where(postcomment1_id: comment.id).count
+    end
   end
 
   def create

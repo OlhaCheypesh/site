@@ -69,15 +69,16 @@
 <hr>
 </div>
 
-<% @comment1s.each do |comment1|%>
+<% @comments.each do |comment|%>
 <div class="ram">
-<p><%= image_tag comment1.user.avatar.url(:thumb), width: 30, heigth: 30 %>
- User <b><%= comment1.user.nickname %></b> write:</p>
+<p><%= image_tag comment.user.avatar.url(:thumb), width: 30, heigth: 30 %>
+ User <b><%= comment.user.nickname %></b> write:</p>
  <div class = "bord">
-<i><%= comment1.text %></i>
+<i><%= comment.text %></i>
 </div>
 <div class="time"><span class="glyphicon glyphicon-time"></span>
-<small><%= comment1.created_at %></small></div>
+<small><%= comment.created_at %></small></div>
+<%= link_to vote1_path(comment.id) do%><i class="glyphicon glyphicon-bell"></i><%end%>(<%=@votes[comment.id]%>)
 </div>
 <% end %>
 

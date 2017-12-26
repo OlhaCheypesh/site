@@ -23,6 +23,17 @@ def destroy
     redirect_to posts2_path(@post2)
   end
 
+  def vote
+    @comment=Postcomment2.find(params[:postcomment2_id])
+    @vote=Vote2.where(user_id: current_user.id, postcomment2_id: @comment.id).first
+    if @vote != nil
+      @vote.destroy
+    else
+      @vote=Vote2.create(user_id: current_user.id, postcomment2_id: @comment.id)
+    end
+    redirect_to posts2_path(@comment.post2.id)
+  end
+
 private
 
   def postcomment2s_params
