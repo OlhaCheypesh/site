@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.4.0'
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -32,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'aws-sdk', '~> 2'
+
 #avatar gem
 gem "paperclip", "~> 5.0.0"
 #validations
@@ -47,7 +48,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  
+  gem 'sqlite3'
 end
 
 group :development do
@@ -57,7 +58,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'sqlite3'
+  
 end
 
 group :production do
