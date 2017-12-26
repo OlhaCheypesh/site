@@ -8,10 +8,12 @@ class User < ApplicationRecord
          has_many :posts
          has_many :postcomments
          has_many :votes
-                  has_many :posts1
+                  has_many :post1s
          has_many :postcomments1
-                  has_many :posts2
-         has_many :postcomments2
+                  has_many :vote1s
+                  has_many :post2s
+         has_many :postcomment2s
+                  has_many :vote2s
 
  validates :nickname, :email, :password_confirmation, :password, presence: true
  validates :nickname, :email, uniqueness: true
