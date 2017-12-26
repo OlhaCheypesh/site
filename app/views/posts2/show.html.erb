@@ -71,23 +71,14 @@
 
 <% @comments.each do |comment|%>
 <div class="ram">
-<%= render 'postcomments/_elem' %>
+<%= render 'postcomments/elem' %>
 <%= link_to vote2_path(comment.id) do%><i class="glyphicon glyphicon-bell"></i><%end%>(<%=@votes[comment.id]%>)
 </div>
 <% end %>
 
 	
 <%= form_for :postcomment2, url: posts2_postcoment2s_path(posts2_id: @post2.id) do |f| %>
-<% if flash[:notice] %>
-  <div class="notice"> <%= flash[:notice] %> </div>
-<% end %>
-<div class="com">
-	<p><%= f.label "Comment" %></p>
-	<%= f.text_area :text,  class: "content-field", placeholder: "Add a comment"%><br />
- 
-
- <p><%= f.submit "Send" %></p>
- </div>
+<%=render "postcomments/form"
 <%end%>
  </div>
          </div>

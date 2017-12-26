@@ -1,0 +1,10 @@
+<% if flash[:notice] %>
+  <div class="notice"> <%= flash[:notice] %> </div>
+<% end %>
+<div class="com">
+	<p><%= f.label "Comment" %></p>
+	<%= f.text_area :text,  class: "content-field", placeholder: "Add a comment"%><br />
+ 
+
+ <p><%= f.submit "Send" %></p>
+ </div>

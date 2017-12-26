@@ -71,7 +71,7 @@
 
 <% @comments.each do |comment|%>
 <div class="ram">
-<%= render 'postcomments/_elem' %>
+<%= render 'postcomments/elem' %>
 <%= link_to vote1_path(comment.id) do%><i class="glyphicon glyphicon-bell"></i><%end%>(<%=@votes[comment.id]%>)
 </div>
 <% end %>
