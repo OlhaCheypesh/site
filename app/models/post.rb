@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
 	belongs_to :user
-	 has_many :postcomments
+	has_many :postcomments
+	belongs_to :category
 	 
 	validates :title, length: { in: 1..30 }
 	validates :body, length: { in: 10..5012 }

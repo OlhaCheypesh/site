@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.create(name: "HTML") 
-Category.create(name: "CSS") 
-Category.create(name: "JS") 
+Category.create(name: "HTML",description: "Getting started with HTML") 
+Category.create(name: "CSS",description: "Getting started with CSS") 
+Category.create(name: "JS",description: "Getting started with JS") 

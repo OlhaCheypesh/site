@@ -1,4 +1,7 @@
 
+<p><%= f.label :category %></p>
+<%= select_tag 'category_id', options_from_collection_for_select(Category.all, 'id', 'name')%>
+
   <p><%= f.label :title %></p>
   <%= f.text_field :title %><br />
 
