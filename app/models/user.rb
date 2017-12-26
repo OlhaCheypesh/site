@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
          has_many :posts
          has_many :postcomments
+         has_many :votes
                   has_many :posts1
          has_many :postcomments1
                   has_many :posts2

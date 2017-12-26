@@ -7,6 +7,10 @@ class PostsController < ApplicationController
 
   def show
     @comments = Postcomment.where(post_id: @post.id)
+    @votes={}
+    @comments.each do |comment|
+      @votes[comment.id]=Vote.where(postcomment_id: comment.id).count
+    end
   end
 
   def create

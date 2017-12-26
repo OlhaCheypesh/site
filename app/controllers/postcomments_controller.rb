@@ -24,11 +24,12 @@ def destroy
   end
 
   def vote
-    @comment=Postcomment.find(params[:postcomment_id]))
-    if @vote=Vote.where(user_id: current_user, postcomment_id: @comment.id).first
+    pp @comment=Postcomment.find(params[:postcomment_id])
+    pp @vote=Vote.where(user_id: current_user, postcomment_id: @comment.id).first
+    if @vote != nil
       @vote.destroy
     else
-      @vote=Vote.create(user_id: current_user, postcomment_id: @comment.id)
+      @vote=Vote.create(user_id: current_user.id, postcomment_id: @comment.id)
     end
     redirect_to post_path(@comment.post.id)
   end

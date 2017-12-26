@@ -80,7 +80,7 @@
 <small><%= comment.created_at %></small></div>
 <%= link_to 'Destroy', [comment.post, comment], :confirm => 'Are you sure?', :method => :delete %>
 </div>
-
+<%= link_to vote_path(comment.id) do%><i class="glyphicon glyphicon-bell"></i><%end%>(<%=@votes[comment.id]%>)
 <% end %>
 
 	
