@@ -71,13 +71,7 @@
 
 <% @comments.each do |comment|%>
 <div class="ram">
-<p><%= image_tag comment.user.avatar.url(:thumb), width: 30, heigth: 30 %>
- User <b><%= comment.user.nickname %></b> write:</p>
- <div class = "bord">
-<i><%= comment.text %></i>
-</div>
-<div class="time"><span class="glyphicon glyphicon-time"></span>
-<small><%= comment.created_at %></small></div>
+<%= render 'postcomments/_elem' %>
 <%= link_to vote1_path(comment.id) do%><i class="glyphicon glyphicon-bell"></i><%end%>(<%=@votes[comment.id]%>)
 </div>
 <% end %>
