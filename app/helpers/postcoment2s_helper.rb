@@ -1,2 +1,0 @@
-module Postcoment2sHelper
-end

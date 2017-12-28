@@ -17,10 +17,10 @@
             </div>
             <div class="col-xs-12 col-sm-8">
                 <% if current_user != nil and current_user.id == 1 %>
-                    <center><%= link_to "Create new learn", new_posts2_path, class: "btn btn-default" %></center>
+                    <center><%= link_to "Create new learn", new_post_path, class: "btn btn-default" %></center>
                 <%end%> 
-                    <% @posts2.each do |post2| %>   
-                    <center><h4>• <%= link_to post2.title, posts2_path(post2.id) %></h4></center>
+                    <% @posts.each do |post| %>   
+                    <center><h4>• <%= link_to post.title, post_path(post.id) %></h4></center>
                     <%end%>
             </div>
          </div>

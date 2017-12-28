@@ -10,43 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171226122748) do
+ActiveRecord::Schema.define(version: 20171228085438) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "post1s", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "title"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "post2s", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "title"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "postcomment1s", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post1_id"
-    t.string "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "postcomment2s", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post2_id"
-    t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,6 +33,7 @@ ActiveRecord::Schema.define(version: 20171226122748) do
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,20 +57,6 @@ ActiveRecord::Schema.define(version: 20171226122748) do
     t.integer "category_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "vote1s", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "postcomment1_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "vote2s", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "postcomment2_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "votes", force: :cascade do |t|

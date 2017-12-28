@@ -1,8 +1,0 @@
-<center><%= form_for :post2, url:posts2_index_path, method: :patch do |f| %>
-	<% if @post2.errors.any? %>
-	 <% @post2.errors.full_messages.each do |msg| %>
-	 	<li><%=msg%></li>
-	   <%end%>
-	 <%end%>
-<%= render 'posts/form', f:f%>
-<%end%></center>

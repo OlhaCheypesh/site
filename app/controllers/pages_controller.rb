@@ -4,17 +4,14 @@ class PagesController < ApplicationController
   end
 
   def html
-  	 @users = User.all	
-  @posts = Post.all
+  @posts = Post.where(category_id: 1)
   end
 
   def css
-  	 @users = User.all	
-  @posts1 = Post1.all
+  @posts = Post.where(category_id: 2)
   end
 
   def javascript
-  	 @users = User.all	
-  @posts2 = Post2.all
+  @posts = Post.where(category_id: 3)
   end
 end
