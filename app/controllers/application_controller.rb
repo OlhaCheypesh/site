@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+ class ApplicationController < ActionController::Base
   before_action :devise_sign_up_params, if: :devise_controller?
   protect_from_forgery with: :exception
 
